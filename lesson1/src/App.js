@@ -18,10 +18,10 @@ function App() {
       {/* <FormPage2 /> */}
 
       {/* 自己实现一个create */}
-      <MyFormPage />
+      {/* <MyFormPage /> */}
 
       {/*  弹窗*/}
-      {/* <DialogPage /> */}
+      <DialogPage />
     </div>
   );
 }

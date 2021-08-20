@@ -7,7 +7,7 @@ const passwordRules = { required: true, message: "please input ur password" };
 @kFormCreate
 class MyFormPage extends Component {
   submit = () => {
-    const { getFieldsValue, validateFields } = this.props
+    const { validateFields } = this.props
     validateFields((err, values) => {
       if (err) {
 
