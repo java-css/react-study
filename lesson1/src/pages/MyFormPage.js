@@ -7,19 +7,25 @@ const passwordRules = { required: true, message: "please input ur password" };
 @kFormCreate
 class MyFormPage extends Component {
   submit = () => {
-    console.log();
+    const { getFieldsValue, validateFields } = this.props
+    validateFields((err, values) => {
+      if (err) {
+
+      } else {
+
+      }
+    })
   }
   render() {
-    console.log("props", this.props); //sy-log
     const { getFieldDecorator } = this.props;
     return (
       <div>
         <h3>MyFormPage</h3>
         {
-          getFieldDecorator('name', {})(<input type="text" placeholder="please input ur name" />)
+          getFieldDecorator('name', { rules: [nameRules] })(<input type="text" placeholder="please input ur name" />)
         }
         {
-          getFieldDecorator('password', {})(<input type="password" placeholder="please input ur password" />)
+          getFieldDecorator('password', { rules: [passwordRules] })(<input type="password" placeholder="please input ur password" />)
         }
 
 
