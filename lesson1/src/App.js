@@ -4,6 +4,7 @@ import FormPage from "./pages/FormPage";
 import FormPage2 from "./pages/FormPage2";
 import MyFormPage from "./pages/MyFormPage";
 import DialogPage from "./pages/DialogPage";
+import ReduxPage from './pages/ReduxPage'
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <MyFormPage /> */}
 
       {/*  弹窗*/}
-      <DialogPage />
+      {/* <DialogPage /> */}
+      <ReduxPage />
     </div>
   );
 }
