@@ -1,4 +1,4 @@
-import { createStore } from '../kRedux'
+import { createStore, applyMiddleware } from '../kRedux'
 
 function countReducer(state = 0, action) {
     switch (action.type) {
@@ -12,6 +12,23 @@ function countReducer(state = 0, action) {
 
 }
 
-const store = createStore(countReducer)
+const store = createStore(countReducer, applyMiddleware(logger))
 
 export default store;
+
+function logger() {
+    return dispatch => action => {
+        console.log('点击了事件action', action.type);
+
+    }
+}
+
+function chunk({ getState, dispatch }) {
+    return dispatch => action => {
+        if (typeof action === 'function') {
+            return action(dispatch, getState)
+        } else {
+            return dispatch(action)
+        }
+    }
+}
